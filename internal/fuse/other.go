@@ -37,6 +37,7 @@ func (l *other) Attr(_ context.Context, a *fuse.Attr) error {
 	a.Mtime = l.node.ModTime
 
 	a.Nlink = uint32(l.node.Links)
+	a.Rdev = uint32(l.node.Device)
 
 	return nil
 }
